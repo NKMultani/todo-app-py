@@ -1,2 +1,3 @@
-# todo-app-py
-Todo application created using python (console)
+# Todo Console App
+
+This is a simple todo console application created using Python.

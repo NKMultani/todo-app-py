@@ -9,9 +9,9 @@ helper.printHeader()
 
 data.addTodoItem("apple")
 data.changeTodoItemStatus("apple")
-data.removeTodoItem("apple")
+#data.removeTodoItem("apple")
 
 for todoItem in data.todoItems:
-    helper.printItem(todoItem)
+    todoItem.print()
 
 helper.printFooter()

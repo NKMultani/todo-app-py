@@ -11,12 +11,4 @@ def printFooter():
     print("")
     print("--------------------------")
     print("--- Created by Navdeep ---")
-    print("--------------------------")
-
-
-def printItem(item):
-    statusUi = "[ ]"
-    if item.status == True:
-        statusUi = "[x]"
-    print(statusUi + " " + item.title)
-    print("--------------------------")    
+    print("--------------------------")   

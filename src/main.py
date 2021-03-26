@@ -3,15 +3,34 @@ import todoClass
 import helper
 import data
 
-os.system("clear")
+def main():
+    os.system("clear")
 
-helper.printHeader()
+    helper.printHeader()
 
-data.addTodoItem("apple")
-data.changeTodoItemStatus("apple")
-#data.removeTodoItem("apple")
+    todoManager = data.ToDoManager()
 
-for todoItem in data.todoItems:
-    todoItem.print()
+    todoManager.addTodoItem("Learn python")
+    todoManager.addTodoItem("Write code in python")
+    todoManager.addTodoItem("Learn SQL")
+    todoManager.changeTodoItemStatus("Learn python")
+    #todoManager.removeTodoItem("apple")
 
-helper.printFooter()
+    todoManager.printTodoItems()
+
+    helper.printMainMenu()
+    op = helper.getUserInputForMainMenu()
+
+
+    if op == "1":
+        print("You selected to add a new item.")
+    elif op == "2":
+        print("You selected to remove an item.")
+    elif op == "3":
+        print("You selcted to toggle an item.")
+    elif op == "4":
+        print("Exiting the main menu.")        
+
+    helper.printFooter()
+
+main()    

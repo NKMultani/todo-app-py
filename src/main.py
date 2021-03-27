@@ -1,35 +1,42 @@
 import os
 import todoClass
 import helper
-import data
+import todoManager
+
+def mainMenuFunctionality():
+    helper.printMainMenu()
+    op = helper.getUserInputForMainMenu()
+    print(op)
+    if op == "1":
+        item = helper.getUserInputForNewItem()
+        todoManager.addTodoItem(item)
+        todoManager.printTodoItems()
+        mainMenuFunctionality()
+    elif op == "2":
+        item = helper.getUserInputForRemoveItem()
+        todoManager.removeTodoItem(item)
+        todoManager.printTodoItems()
+        mainMenuFunctionality()
+    elif op == "3":
+        item = helper.getUserInputForChangeStatusItem()
+        todoManager.changeTodoItemStatus(item)
+        todoManager.printTodoItems()
+        mainMenuFunctionality()
+    elif op == "4":
+        print("\nExiting the main menu.")  
+
 
 def main():
     os.system("clear")
 
     helper.printHeader()
 
-    todoManager = data.ToDoManager()
-
-    todoManager.addTodoItem("Learn python")
-    todoManager.addTodoItem("Write code in python")
-    todoManager.addTodoItem("Learn SQL")
-    todoManager.changeTodoItemStatus("Learn python")
-    #todoManager.removeTodoItem("apple")
+    global todoManager
+    todoManager = todoManager.ToDoManager()
 
     todoManager.printTodoItems()
 
-    helper.printMainMenu()
-    op = helper.getUserInputForMainMenu()
-
-
-    if op == "1":
-        print("You selected to add a new item.")
-    elif op == "2":
-        print("You selected to remove an item.")
-    elif op == "3":
-        print("You selcted to toggle an item.")
-    elif op == "4":
-        print("Exiting the main menu.")        
+    mainMenuFunctionality()      
 
     helper.printFooter()
 

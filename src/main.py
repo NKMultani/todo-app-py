@@ -27,16 +27,13 @@ def mainMenuFunctionality():
 
 def main():
     os.system("clear")
-
     helper.printHeader()
 
     global todoManager
     todoManager = todoManager.ToDoManager()
-
     todoManager.printTodoItems()
 
     mainMenuFunctionality()      
-
     helper.printFooter()
 
 main()    

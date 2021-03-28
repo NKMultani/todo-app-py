@@ -1,5 +1,4 @@
 import os
-import todoClass
 import helper
 import todoManager
 

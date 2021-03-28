@@ -1,4 +1,4 @@
-import todoClass
+import todoItem
 
 class ToDoManager():
     def __init__(self):
@@ -8,7 +8,7 @@ class ToDoManager():
         if title == "":
             print("\nThe item is not valid. Please try again.")
             return
-        item = todoClass.TodoItem(title, False)
+        item = todoItem.TodoItem(title, False)
         self.__todoItems.append(item)
 
     def removeTodoItem(self, title):

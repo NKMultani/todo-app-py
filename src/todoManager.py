@@ -8,6 +8,11 @@ class ToDoManager():
         if title == "":
             print("\nThe item is not valid. Please try again.")
             return
+
+        if self.__isTodoItemExists(title) == True:
+            print("\nThe item already exists.")
+            return   
+
         item = todoItem.TodoItem(title, False)
         self.__todoItems.append(item)
 
@@ -22,6 +27,12 @@ class ToDoManager():
             if item.title.lower() == title.lower():
                 item.status = not item.status
                 break
+
+    def __isTodoItemExists(self, title):
+        for todoItem in self.__todoItems:
+            if todoItem.title.lower() == title.lower():
+                return True
+        return False                    
 
     def printTodoItems(self):
         print("")
